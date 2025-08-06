@@ -1,0 +1,6 @@
+{
+  "username": "qa_wrong_token@mail.com",
+  "password": "String123!"
+}
+
+"token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoicWFfd3JvbmdfdG9rZW5AbWFpbC5jb20iLCJpc3MiOiJSZWd1bGFpdCIsImV4cCI6MTc1NDg0MDY5MSwiaWF0IjoxNzU0MjQwNjkxfQ.VohiB_9ssWCfzBK-UB23MtSR4rQzAUglOahccww156E"

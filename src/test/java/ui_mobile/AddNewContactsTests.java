@@ -2,6 +2,7 @@ package ui_mobile;
 
 import config.AppiumConfig;
 
+import dto.Contact;
 import dto.UserDto;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -34,6 +35,21 @@ public class AddNewContactsTests extends AppiumConfig{
         addNewContactScreen.typeContactForm(createPositiveContact());
         Assert.assertTrue(addNewContactScreen
                 .validateMessageSuccess("Contact was added!"));
+    }
+    @Test
+    public void addNewContactPositiveTest2(){
+        Contact testContact = createPositiveContact();
+        addNewContactScreen.typeContactForm(testContact);
+        contactsScreen.scrollToLastContact();
+        //contactsScreen.scrollToLastContact();
+        contactsScreen.clickToLastContact();
+        ContactScreen contactScreen = new ContactScreen(driver);
+        System.out.println(contactScreen.getContact());
+        Assert.assertEquals(contactScreen.getContact(), testContact);
+
+
+
+
     }
 
     @Test

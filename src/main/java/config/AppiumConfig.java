@@ -11,24 +11,18 @@ import java.net.URL;
 
 public abstract class AppiumConfig {
     protected static AppiumDriver driver;
-/*
-{
-  "platformName": "Android",
-  "deviceName": "Android_SDK_built_for_x86 device",
-  "platformVersion": "10.0",
-  "appPackage": "com.sheygam.contactapp",
-  "appActivity": ".SplashActivity"
-}
- */
+
+
+
     @BeforeMethod
-    public void setUp(){
+    public void setup(){
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("platformName", "Android");
         desiredCapabilities.setCapability("deviceName", "Android_SDK_built_for_x86");
         desiredCapabilities.setCapability("platformVersion", "10.0");
-        desiredCapabilities.setCapability("appPackage", "com.sheygam.contactapp");
+        desiredCapabilities.setCapability("appPackage","com.sheygam.contactapp");
         desiredCapabilities.setCapability("appActivity", ".SplashActivity");
-        desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"Appium");
+        desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "Appium");
         String url = "http://localhost:4723/wd/hub";
         try {
             driver = new AndroidDriver(new URL(url), desiredCapabilities);
